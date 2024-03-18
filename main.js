@@ -1,13 +1,21 @@
 
 
 function Main(input) {
-  const inputArr = input.split("\n");
-  console.log(inputArr);
+  let dataArr = input.split("\n");
+  let inputArr = dataArr.shift();
+  dataArr = dataArr.map((data)=>{return Number(data);});
+  const kagamimoti = Array.from(new Set(dataArr));
+  console.log(kagamimoti.length);
 
 }
 
   var input = "4\n10\n8\n8\n6";
   Main(input);
+
+
+
+// //*この行以降は編集しないでください（標準入出力から一度に読み込み、Mainを呼び出します）
+// Main(require("fs").readFileSync("/dev/stdin", "utf8")); // これは必ず必要な呪文です
 
 
 
