@@ -7,19 +7,49 @@
 function Main(input) {
   const input1 = input.trim();
   const input2 = input1.split(" ");
+  const input3 = input2.map((data)=>{return Number(data);});
+  let osatuArr = [];
 
-  console.log(input2)
+  for(let a = 0; a <= input3[0];a++){
+    for(let b = 0; a+b <= input3[0];b++){
+      const c = input3[0] - a - b;
+      const total = 10000 * a + 5000 * b + 1000 * c;
+      if(total === input3[1] && input3[0] === a + b + c){
+        osatuArr = [a,b,c];
+        break;
+      }
+    }
+  }
 
+  if(osatuArr.length === 0){
+    osatuArr = [-1,-1,-1];
+  }
 
+  console.log(osatuArr.join(' '));
 
 }
-
   var input = "9 45000";
   Main(input);
 
 
+//   for(let a = 0; a <= input3[0];a++){
+//     for(let b = 0; b <= input3[0];b++){
+//       for(let c = 0; c <= input3[0];c++){
+//         if(input3[1] === 10000 * c + 5000 * b + 1000 * a && input3[0] === a + b + c){
+//           osatuArr=[c,b,a];
+//           break;
+//         }
+//       }
+//     }
+//   }
 
+//   if(osatuArr.length===0){
+//     osatuArr=[-1,-1,-1];
+//   }
 
+//   console.log(osatuArr.join(' '))
+
+// }
 
 
 
