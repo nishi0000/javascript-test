@@ -1,16 +1,63 @@
 
 
+
+
+
+
 function Main(input) {
-  let dataArr = input.split("\n");
-  let inputArr = dataArr.shift();
-  dataArr = dataArr.map((data)=>{return Number(data);});
-  const kagamimoti = Array.from(new Set(dataArr));
-  console.log(kagamimoti.length);
+  const input1 = input.trim();
+  const input2 = input1.split(" ");
+
+  console.log(input2)
+
+
 
 }
 
-  var input = "4\n10\n8\n8\n6";
+  var input = "9 45000";
   Main(input);
+
+
+
+
+
+
+
+
+
+// function Main(input) {
+//   const input1 = input.trim();
+//   const dataArr = input1.split("\n");
+//   const inputArr = dataArr.shift();
+//   // dataArr = dataArr.map((data)=>{return Number(data);});
+//   const kagamimoti = dataArr.filter((element, index) => {
+//     return dataArr.indexOf(element) == index;
+//   }) 
+//   // console.log(kagamimoti)
+//   console.log(kagamimoti.length);
+
+// }
+
+//   var input = "7\n50\n30\n50\n100\n50\n80\n30";
+//   Main(input);
+
+
+
+
+
+
+
+// function Main(input) {
+//   let dataArr = input.split("\n");
+//   let inputArr = dataArr.shift();
+//   dataArr = dataArr.map((data)=>{return Number(data);});
+//   const kagamimoti = Array.from(new Set(dataArr));
+//   console.log(kagamimoti.length);
+
+// }
+
+//   var input = "4\n10\n8\n8\n6";
+//   Main(input);
 
 
 
