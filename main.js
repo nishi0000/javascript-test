@@ -1,35 +1,55 @@
 
 
 
-
-
-
 function Main(input) {
-  const input1 = input.trim();
-  const input2 = input1.split(" ");
-  const input3 = input2.map((data)=>{return Number(data);});
-  let osatuArr = [];
-
-  for(let a = 0; a <= input3[0];a++){
-    for(let b = 0; a+b <= input3[0];b++){
-      const c = input3[0] - a - b;
-      const total = 10000 * a + 5000 * b + 1000 * c;
-      if(total === input3[1] && input3[0] === a + b + c){
-        osatuArr = [a,b,c];
-        break;
-      }
-    }
-  }
-
-  if(osatuArr.length === 0){
-    osatuArr = [-1,-1,-1];
-  }
-
-  console.log(osatuArr.join(' '));
+  let input1 = input.trim();
+  let hakutyumu = input1.replace(/eraser/g, "");
+  hakutyumu = hakutyumu.replace(/erase/g, "");
+  hakutyumu = hakutyumu.replace(/dreamer/g, "");
+  hakutyumu = hakutyumu.replace(/dream/g, "");
+   if(hakutyumu === ""){
+    console.log("YES");
+   }else{
+    console.log("NO");
+   }
 
 }
-  var input = "9 45000";
+
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8")); // これは必ず必要な呪文です
+
+var input = "dreameraser";
   Main(input);
+
+
+
+
+// function Main(input) {
+//   const input1 = input.trim();
+//   const input2 = input1.split(" ");
+//   const input3 = input2.map((data)=>{return Number(data);});
+//   let osatuArr = [];
+
+//   for(let a = 0; a <= input3[0];a++){
+//     for(let b = 0; a+b <= input3[0];b++){
+//       const c = input3[0] - a - b;
+//       const total = 10000 * a + 5000 * b + 1000 * c;
+//       if(total === input3[1] && input3[0] === a + b + c){
+//         osatuArr = [a,b,c];
+//         break;
+//       }
+//     }
+//   }
+
+//   if(osatuArr.length === 0){
+//     osatuArr = [-1,-1,-1];
+//   }
+
+//   console.log(osatuArr.join(' '));
+
+// }
+//   var input = "20 196000";
+//   Main(input);
 
 
 //   for(let a = 0; a <= input3[0];a++){
