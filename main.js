@@ -1,25 +1,57 @@
 
-
-
 function Main(input) {
-  let input1 = input.trim();
-  let hakutyumu = input1.replace(/eraser/g, "");
-  hakutyumu = hakutyumu.replace(/erase/g, "");
-  hakutyumu = hakutyumu.replace(/dreamer/g, "");
-  hakutyumu = hakutyumu.replace(/dream/g, "");
-   if(hakutyumu === ""){
-    console.log("YES");
-   }else{
-    console.log("NO");
-   }
+    const input1 = input.split("\n");
+    const input2 = Number(input1.shift());
+    let currentTime = 0;
+    let currentX = 0;
+    let currentY = 0;
 
-}
+    for(index = 0 ; index < input2; index++){
+      const inputArr = input1[index].trim().split(" ");
+      const [time,x,y] = inputArr;
+      const remainingTime = time - currentTime;
+      const distance = Math.abs(currentX - x) + Math.abs(currentY - y);
+      currentTime = time;
+      currentX = x;
+      currentY = y;
+      if (remainingTime < distance || (remainingTime - distance) % 2 !== 0) {
+        return console.log("No");
+      }
+    }
+
+    return console.log("Yes");
+  }
+  
+  
+  Main(require("fs").readFileSync("/dev/stdin", "utf8")); // これは必ず必要な呪文です
+  
+  // var input = "2\n3 1 2 \n6 1 1";
+  // Main(input);
 
 
-Main(require("fs").readFileSync("/dev/stdin", "utf8")); // これは必ず必要な呪文です
 
-var input = "dreameraser";
-  Main(input);
+
+
+
+// function Main(input) {
+//   let input1 = input.trim();
+//   let hakutyumu = input1.replace(/eraser/g, "");
+//   hakutyumu = hakutyumu.replace(/erase/g, "");
+//   hakutyumu = hakutyumu.replace(/dreamer/g, "");
+//   hakutyumu = hakutyumu.replace(/dream/g, "");
+//    if(hakutyumu === ""){
+//     console.log("YES");
+//    }else{
+//     console.log("NO");
+//    }
+
+// }
+
+
+// Main(require("fs").readFileSync("/dev/stdin", "utf8")); // これは必ず必要な呪文です
+
+// var input = "dreameraser";
+//   Main(input);
 
 
 
